@@ -1,0 +1,82 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+final kFactorProvider = NotifierProvider<KFactor, double>(KFactor.new);
+
+class KFactor extends Notifier<double>{
+  @override
+  double build(){
+    return 0.20;
+    }
+  void setKfactor(double value){
+    state=value;
+  }
+}
+
+
+final strengthProvider = NotifierProvider<Strength, Map<String, bool>>(Strength.new);
+
+class Strength extends Notifier<Map<String, bool>>{
+  @override
+  Map<String, bool> build(){
+    return {
+      '0': false,
+      '1': false,
+      '2': false,
+      '3': false,
+      };
+    }
+  void setStrength(String selected) {
+	    state = {for (var key in state.keys) key: key == selected ? true : false};
+	  }
+}
+
+final strengthNameProvider = NotifierProvider<StrengthName, String>(StrengthName.new);
+
+class StrengthName extends Notifier<String>{
+  @override
+  String build(){
+    return "";
+    }
+  void setName(String selected) {
+	    state = selected;
+	  }
+}
+
+final sizeNameProvider = NotifierProvider<SizeName, String>(SizeName.new);
+
+class SizeName extends Notifier<String>{
+  @override
+  String build(){
+    return "1/4-20";
+    }
+  void setName(String selected) {
+	    state = selected;
+	  }
+}
+
+
+
+final sizeProvider = NotifierProvider<Size, int>(Size.new);
+
+class Size extends Notifier<int>{
+  @override
+  int build(){
+    return 0;
+    }
+  void setSize(int value){
+    state=value;
+  }
+}
+
+
+final torqueProvider = NotifierProvider<Torque, double>(Torque.new);
+class Torque extends Notifier<double>{
+  @override
+  double build(){
+    return 0.0;
+    }
+  void setTorque(double  value){
+    state=value;
+  }
+}
