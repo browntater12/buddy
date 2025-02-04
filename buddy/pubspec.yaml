@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sqflite: ^2.4.1
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
   

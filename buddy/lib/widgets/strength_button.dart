@@ -14,18 +14,24 @@ class StrengthButton extends ConsumerWidget {
 
     return GestureDetector(
       child: Container(  
-        width: MediaQuery.of(context).size.width / 4,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: isSelected ? Color.fromRGBO(218, 255, 125, 0.5) : null,
-                  borderRadius: BorderRadius.circular(100),
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+                  color: isSelected ? Color.fromRGBO(193, 237, 204,0.5) : null,
+                  borderRadius: BorderRadius.circular(5),
                 ),
-                child: image),
-              Text(title, style: const TextStyle(color: Color.fromRGBO(247, 247, 255, 1)),),
-            ],
+        width: MediaQuery.of(context).size.width / 4,
+        child: Material(
+          color: Color(0xFF1da1f2),
+          elevation: 6,
+          borderRadius: BorderRadius.circular(8.0),
+
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(child: image),
+                Text(title, style: const TextStyle(color: Colors.white),),
+              ],
+          ),
         ),
       ),
       onTap: () {

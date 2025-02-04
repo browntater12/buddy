@@ -43,14 +43,14 @@ class CupertinoPickerExample extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text('Select size '),
+              const Text('Diameter', style: TextStyle(color: Colors.white),),
               Container(
                 width: 200,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(129, 132, 121, 1), // Background color
+                  color: Color.fromRGBO(193, 237, 204,0.5), // Background color
                   border: Border.all(
-                  color: Color.fromRGBO(129, 132, 121, 1), // Border color
+                  color: Color.fromRGBO(193, 237, 204,0.5), // Border color
                   width: 2, // Border width
                   ),
                   borderRadius: BorderRadius.circular(12), // Rounded corners
@@ -85,6 +85,7 @@ class CupertinoPickerExample extends ConsumerWidget {
                     sizes[ref.watch(sizeProvider)],
                     style: const TextStyle(
                       fontSize: 22.0,
+                      color: Colors.white
                     ),
                   ),
                 ),

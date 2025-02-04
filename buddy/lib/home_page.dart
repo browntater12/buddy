@@ -15,8 +15,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(0, 16, 17, 1),
-      appBar: AppBar(actions: [IconButton(onPressed: (){print("settings");}, icon: Icon(Icons.settings, color: Color.fromRGBO(129, 132, 121, 1)))], title: Text("Torque Calculator", style: TextStyle(color: Color.fromRGBO(247, 247, 255, 1)),), backgroundColor:Color.fromRGBO(0, 16, 17, 1)),
+      backgroundColor: Color(0xFF1da1f2),
+      appBar: AppBar(backgroundColor: Color(0xFF1da1f2), actions: [IconButton(onPressed: (){print("settings");}, icon: Icon(Icons.settings, color: Color.fromRGBO(129, 132, 121, 1)))], title: Text("Torque Calculator", style: TextStyle(color: Color.fromRGBO(247, 247, 255, 1)),)),
       body: Column(
           children: [
             //Gap Between AppBar and Strengths
@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
               height: 100,
               padding: EdgeInsets.all(8),
               margin: EdgeInsets.only(top:30),
-              decoration: BoxDecoration(color: Color.fromRGBO(81, 151, 225, 1), borderRadius: BorderRadius.circular(12)),
+              decoration: BoxDecoration(color:  Color(0xFF1da1f2), borderRadius: BorderRadius.circular(12)),
               child: 
                   ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -36,9 +36,12 @@ class MyHomePage extends StatelessWidget {
                   ),
             ),
             // Gap Between Strengths and Sizes
-       
+
             // CupertinoPicker Widget - Size
-            CupertinoPickerExample(), 
+            Padding(
+              padding: const EdgeInsets.only(top: 30.0),
+              child: CupertinoPickerExample(),
+            ), 
             //Gap Between Picker and Slider
             SizedBox(height: 40,),
             // Slider for k-factor
@@ -50,6 +53,7 @@ class MyHomePage extends StatelessWidget {
           ]
           ),
           bottomNavigationBar: BottomAppBar(
+            color: Color(0xFF1da1f2),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

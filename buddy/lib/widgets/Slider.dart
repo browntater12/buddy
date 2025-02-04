@@ -9,13 +9,15 @@ class SliderExample extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        Text("Select K factor"),
-        Text(ref.watch(kFactorProvider).toString(), style: TextStyle(fontSize: 25),),
+        Text("Select K factor", style: TextStyle(color: Colors.white), ),
+        Text(ref.watch(kFactorProvider).toString(), style: TextStyle(fontSize: 25, color: Colors.white),),
         Slider(
             value: ref.watch(kFactorProvider),
             min: 0.13,
             max: 0.20,
             divisions: 7,
+            thumbColor: Color.fromRGBO(0, 132, 180,1),
+            activeColor: Color.fromRGBO(0, 132, 180,1),
             onChanged: (double value) {
                 _currentSliderValue = value;
                 ref.read(kFactorProvider.notifier).setKfactor(value);
@@ -26,8 +28,8 @@ class SliderExample extends ConsumerWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            Text('Ecoguard'),
-            Text("Dry"),
+            Text('DipSpin', style: TextStyle(color: Colors.white, fontSize: 15), ),
+            Text("Dry", style: TextStyle(color: Colors.white, fontSize: 15)),
           ],),
         ),
         
