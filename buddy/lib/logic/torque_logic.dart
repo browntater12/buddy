@@ -69,6 +69,32 @@ class Size extends Notifier<int>{
   }
 }
 
+final fineNameProvider = NotifierProvider<FineName, String>(FineName.new);
+
+class FineName extends Notifier<String>{
+  @override
+  String build(){
+    return "1/4-28";
+    }
+  void setName(String selected) {
+	    state = selected;
+	  }
+}
+
+
+
+final fineProvider = NotifierProvider<Fine, int>(Fine.new);
+
+class Fine extends Notifier<int>{
+  @override
+  int build(){
+    return 0;
+    }
+  void setFine(int value){
+    state=value;
+  }
+}
+
 
 final torqueProvider = NotifierProvider<Torque, double>(Torque.new);
 class Torque extends Notifier<double>{

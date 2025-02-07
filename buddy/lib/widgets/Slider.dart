@@ -9,27 +9,27 @@ class SliderExample extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        Text("Select K factor", style: TextStyle(color: Colors.white), ),
-        Text(ref.watch(kFactorProvider).toString(), style: TextStyle(fontSize: 25, color: Colors.white),),
+        Text(ref.watch(kFactorProvider).toString(), style: TextStyle(fontSize: 30, color: Colors.white),),
+        Text('k factor',style: TextStyle(color: const Color.fromARGB(255, 127, 121, 121)),),
         Slider(
             value: ref.watch(kFactorProvider),
             min: 0.13,
             max: 0.20,
             divisions: 7,
-            thumbColor: Color.fromRGBO(0, 132, 180,1),
-            activeColor: Color.fromRGBO(0, 132, 180,1),
+            thumbColor: Color(0xFFF4FFDC),
+            activeColor: Color(0xFFF4FFDC),
             onChanged: (double value) {
                 _currentSliderValue = value;
                 ref.read(kFactorProvider.notifier).setKfactor(value);
             }
         ),
-        const Padding(
-          padding: EdgeInsets.only(left:8.0, right:8.0),
+        Padding(
+          padding: EdgeInsets.only(left:20.0, right:20.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            Text('DipSpin', style: TextStyle(color: Colors.white, fontSize: 15), ),
-            Text("Dry", style: TextStyle(color: Colors.white, fontSize: 15)),
+            Text('Zinc Flake', style: TextStyle(color: Colors.white, fontSize: 15), ),
+            Text("Zinc Plated", style: TextStyle(color: Colors.white, fontSize: 15)),
           ],),
         ),
         

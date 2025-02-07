@@ -3,34 +3,48 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class StrengthButton extends ConsumerWidget {
-  const StrengthButton({super.key, required this.title, required this.image, required this.index});
+  const StrengthButton({super.key, required this.title, required this.index});
   final String title;
-  final Image image;
   final int index;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isSelected = ref.watch(strengthProvider)['$index'] ?? false;
+    String imageName = title.replaceAll(' ', '_');
+    
+    print('Title: $title');
+    print('Image Name: $imageName');
+    print('Image Path: ${isSelected ? 'assets/Black/$imageName.png' : 'assets/White/$imageName.png'}');
+
+    Color selectedColor = isSelected ? Color(0xffe5f1ff) : Colors.black;
 
     return GestureDetector(
-      child: Container(  
+      child: Container(
         padding: EdgeInsets.all(5),
-        decoration: BoxDecoration(
-                  color: isSelected ? Color.fromRGBO(193, 237, 204,0.5) : null,
-                  borderRadius: BorderRadius.circular(5),
-                ),
         width: MediaQuery.of(context).size.width / 4,
         child: Material(
-          color: Color(0xFF1da1f2),
+          color: isSelected ? Color(0xffe5f1ff) : Colors.black,
           elevation: 6,
           borderRadius: BorderRadius.circular(8.0),
-
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(child: image),
-                Text(title, style: const TextStyle(color: Colors.white),),
-              ],
+            children: [
+              Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: isSelected ? AssetImage('assets/Black/$imageName.png') : AssetImage('assets/White/$imageName.png'), // Local image
+                      // image: AssetImage('assets/White/$imageName.png'),
+                      fit: BoxFit.cover, // Adjusts the image to cover the entire container
+                    ),
+                  ),
+              ),
+              Text(
+                title,
+                style: TextStyle(color: isSelected ? Colors.black : Colors.white),
+              ),
+            ],
           ),
         ),
       ),
@@ -41,5 +55,3 @@ class StrengthButton extends ConsumerWidget {
     );
   }
 }
-
-

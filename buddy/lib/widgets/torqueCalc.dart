@@ -13,7 +13,7 @@ class TorqueOutput extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // calculate(ref.watch(kFactorProvider), ref.watch(sizeProvider), ref.watch(strengthProvider));
     // return  Text(ref.watch(torqueProvider).toString());
-    var size = fasteners['inch']['coarse'][ref.watch(sizeNameProvider).toString()]['diameter'];
+    var size = fasteners['inch']['coarse'][ref.watch(sizeNameProvider).toString()]['diameter'] ?? 0;
     var kfactor = ref.watch(kFactorProvider);
 
     var strength =  fasteners['inch']['coarse'][ref.watch(sizeNameProvider).toString()]['${ref.watch(strengthNameProvider).replaceAll(" ", "_")}_Clamp_Load'] ?? 0;
@@ -28,9 +28,15 @@ class TorqueOutput extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.center, 
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          
+          Container(
+              padding: EdgeInsets.all(2),
+              decoration: BoxDecoration(color:  Color.fromRGBO(65, 65, 65, 1), borderRadius: BorderRadius.circular(3)),
+              child: Text('INCH', style: TextStyle(color: Colors.white),),
+            ),
           // Text('Clampload:\n $strength lbs', style: TextStyle(fontSize: 40, color: Colors.white),),
-          Text('$torque ft/lbs', style: TextStyle(fontSize: 50, color: Colors.white),)
+          Text('$torque', style: TextStyle(fontSize: 90, color: Colors.white),),
+          Text('ft-lbs',style: TextStyle(color: Colors.white),)
+
         ]
           ),
     );

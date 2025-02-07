@@ -17,9 +17,26 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        useMaterial3: true,
-        primaryColor: Colors.white,
+        primaryColor: Color(0xFF219EBC), // Main Light Blue
+        scaffoldBackgroundColor: Color(0xFFEAF6F6), // Light Background
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color(0xFFFFB703)), // Accent (Yellow-Orange)
+        textTheme: const TextTheme(
+          displayLarge:
+              TextStyle(color: Color(0xFF023047), fontWeight: FontWeight.bold),
+          bodyLarge: TextStyle(color: Color(0xFF126782)),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, 
+            backgroundColor: Color(0xFFFB8500), // Text on Buttons
+          ),
+        ),
       ),
+      //
+      // ThemeData(
+      //   useMaterial3: true,
+      //   primaryColor: Colors.white,
+      // ),
       home: MyHomePage(title: 'The Brown Lab'),
     );
   }

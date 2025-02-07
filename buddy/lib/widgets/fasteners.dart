@@ -5,7 +5,54 @@ Map fasteners = {
   },
   'inch': {
     'strengths' : ["Grade A", "Grade 5", "Grade 8", "Socket"],
-    'fine':{},
+    'fine':{
+        '1/4-28': {
+          'diameter': 0.25,
+          'pitch': 28,
+          'Grade_A_Clamp_Load': 859,
+          'Grade_5_Clamp_Load': 2029,
+          'Grade_8_Clamp_Load': 2864,
+          'Grade_9_Clamp_Load': 3357,
+          'Socket_Clamp_Load': 3341,
+        },
+      '5/16-24': {
+          'diameter': 0.3125,
+          'pitch': 28,
+          'Grade_A_Clamp_Load': 859,
+          'Grade_5_Clamp_Load': 2029,
+          'Grade_8_Clamp_Load': 2864,
+          'Grade_9_Clamp_Load': 3357,
+          'Socket_Clamp_Load': 3341,
+        },
+      '3/8-24': {
+          'diameter': 0.375,
+          'pitch': 28,
+          'Grade_A_Clamp_Load': 859,
+          'Grade_5_Clamp_Load': 2029,
+          'Grade_8_Clamp_Load': 2864,
+          'Grade_9_Clamp_Load': 3357,
+          'Socket_Clamp_Load': 3341,
+        },
+      '7/16-20': {
+          'diameter': 0.4375,
+          'pitch': 20,
+          'Grade_A_Clamp_Load': 859,
+          'Grade_5_Clamp_Load': 2029,
+          'Grade_8_Clamp_Load': 2864,
+          'Grade_9_Clamp_Load': 3357,
+          'Socket_Clamp_Load': 3341,
+        },
+      '1/2-20': {
+          'diameter': 0.5,
+          'pitch': 20,
+          'Grade_A_Clamp_Load': 859,
+          'Grade_5_Clamp_Load': 2029,
+          'Grade_8_Clamp_Load': 2864,
+          'Grade_9_Clamp_Load': 3357,
+          'Socket_Clamp_Load': 3341,
+        },
+    },
+
     'coarse':{
         '1/4-20': {
           'diameter': 0.25,
