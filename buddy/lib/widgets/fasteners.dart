@@ -1,7 +1,135 @@
 Map fasteners = {
   'metric':{
-    'fine':{},
-    'coarse':{}
+    'coarse':{
+      'M5-0.8':{
+        'diameter': 5,
+        'pitch': 0.8,
+        'Property_Class_4.6': 2393,
+        'Property_Class_8.8': 6169,
+        'Property_Class_10.9': 8829,
+        'Property_Class_12.9': 10318
+      },
+      'M6-1':{
+        'diameter': 6,
+        'pitch': 1,
+        'Property_Class_4.6': 3396,
+        'Property_Class_8.8': 8754,
+        'Property_Class_10.9': 12527,
+        'Property_Class_12.9': 14640
+      },
+      'M8-1.25':{
+        'diameter': 8,
+        'pitch': 1.25,
+        'Property_Class_4.6': 6178,
+        'Property_Class_8.8': 15925,
+        'Property_Class_10.9': 22789,
+        'Property_Class_12.9': 26633
+      },
+      'M10-1.5':{
+        'diameter': 10,
+        'pitch': 1.5,
+        'Property_Class_4.6': 9786, 
+        'Property_Class_8.8': 25225,
+        'Property_Class_10.9': 36099,
+        'Property_Class_12.9': 42187
+      },
+      'M12-1.75':{
+        'diameter': 12,
+        'pitch': 1.75,
+        'Property_Class_4.6': 14220,
+        'Property_Class_8.8': 36656,
+        'Property_Class_10.9': 52456,
+        'Property_Class_12.9': 61304
+      },
+      'M14-2':{
+        'diameter': 14,
+        'pitch': 2,
+        'Property_Class_4.6': 19480,
+        'Property_Class_8.8': 50216,
+        'Property_Class_10.9': 71861,
+        'Property_Class_12.9': 83982
+      },
+      'M16-2':{
+        'diameter': 16,
+        'pitch': 2,
+        'Property_Class_4.6': 26438,
+        'Property_Class_8.8': 68151,
+        'Property_Class_10.9': 97526,
+        'Property_Class_12.9': 113976
+      },
+      'M18-2.5':{
+        'diameter': 18,
+        'pitch': 2.5,
+        'Property_Class_4.6': 32480,
+        'Property_Class_8.8': 86613,
+        'Property_Class_10.9': 119814,
+        'Property_Class_12.9': 140024
+      },
+      'M20-2.5':{
+        'diameter': 20,
+        'pitch': 2.5,
+        'Property_Class_4.6': 41309,
+        'Property_Class_8.8': 110158,
+        'Property_Class_10.9': 152385,
+        'Property_Class_12.9': 178088
+      },
+      'M22-2.5':{
+        'diameter': 22, 
+        'pitch': 2.5,
+        'Property_Class_4.6': 51199,
+        'Property_Class_8.8': 136530,
+        'Property_Class_10.9': 188866,
+        'Property_Class_12.9': 220723
+      },
+      'M24-3':{
+        'diameter': 24,
+        'pitch': 3,
+        'Property_Class_4.6': 59485,
+        'Property_Class_8.8': 158627,
+        'Property_Class_10.9': 219434,
+        'Property_Class_12.9': 256447
+      },
+      'M27-3':{
+        'diameter': 27,
+        'pitch': 3,
+        'Property_Class_4.6': 77525,
+        'Property_Class_8.8': 206733,
+        'Property_Class_10.9': 285981,
+        'Property_Class_12.9': 334218
+      },
+      'M30-3.5':{
+        'diameter': 30,
+        'pitch': 3.5,
+        'Property_Class_4.6': 94599,
+        'Property_Class_8.8': 252264,
+        'Property_Class_10.9': 348966,
+        'Property_Class_12.9': 407828
+      },
+      'M33-3.5':{
+        'diameter': 33,
+        'pitch': 3.5,
+        'Property_Class_4.6': 117037,
+        'Property_Class_8.8': 312099,
+        'Property_Class_10.9': 431737,
+        'Property_Class_12.9': 504561
+      },
+      'M36-4':{
+        'diameter': 36,
+        'pitch': 4,
+        'Property_Class_4.6': 137822,
+        'Property_Class_8.8': 367525,
+        'Property_Class_10.9': 508410,
+        'Property_Class_12.9': 594166
+      },
+      'M39-4':{
+        'diameter': 39,
+        'pitch': 4,
+        'Property_Class_4.6': 164658,
+        'Property_Class_8.8': 439089,
+        'Property_Class_10.9': 607407,
+        'Property_Class_12.9': 709861
+      },
+    }
   },
   'inch': {
     'strengths' : ["Grade A", "Grade 5", "Grade 8", "Socket"],
@@ -50,6 +178,87 @@ Map fasteners = {
           'Grade_8_Clamp_Load': 14396,
           'Grade_9_Clamp_Load': 16873,
           'Socket_Clamp_Load': 16795,
+        },
+        '9/16-18': {
+          'diameter': 0.5625,
+          'pitch': 18,
+          'Grade_A_Clamp_Load': 5480,
+          'Grade_5_Clamp_Load': 12940,
+          'Grade_8_Clamp_Load': 18268,
+          'Grade_9_Clamp_Load': 21412,
+          'Socket_Clamp_Load': 20552,
+        },
+        '5/8-18': {
+          'diameter': 0.625,
+          'pitch': 18,
+          'Grade_A_Clamp_Load': 6911,
+          'Grade_5_Clamp_Load': 16317,
+          'Grade_8_Clamp_Load': 23036,
+          'Grade_9_Clamp_Load': 27000,
+          'Socket_Clamp_Load': 25916,
+        },
+        '3/4-16': {
+          'diameter': 0.75,
+          'pitch': 16,
+          'Grade_A_Clamp_Load': 10070,
+          'Grade_5_Clamp_Load': 23776,
+          'Grade_8_Clamp_Load': 33566,
+          'Grade_9_Clamp_Load': 39343,
+          'Socket_Clamp_Load': 37762,
+        },
+        '7/8-14': {
+          'diameter': 0.875,
+          'pitch': 14,
+          'Grade_A_Clamp_Load': 13756,
+          'Grade_5_Clamp_Load': 32479,
+          'Grade_8_Clamp_Load': 45853,
+          'Grade_9_Clamp_Load': 53743,
+          'Socket_Clamp_Load': 51584,
+        },
+        '1-14': {
+          'diameter': 1,
+          'pitch': 14,
+          'Grade_A_Clamp_Load': 18357,
+          'Grade_5_Clamp_Load': 43343,
+          'Grade_8_Clamp_Load': 61190,  
+          'Grade_9_Clamp_Load': 71720,
+          'Socket_Clamp_Load': 68839,
+        },
+        '1 1/8-12': {
+          'diameter': 1.125,
+          'pitch': 12,
+          'Grade_A_Clamp_Load': 23104,
+          'Grade_5_Clamp_Load': 47493,
+          'Grade_8_Clamp_Load': 77015,
+          'Grade_9_Clamp_Load': 0,
+          'Socket_Clamp_Load': 86642,
+        },
+        '1 1/4-12': {
+          'diameter': 1.25,
+          'pitch': 12,
+          'Grade_A_Clamp_Load': 28970,
+          'Grade_5_Clamp_Load': 59548,  
+          'Grade_8_Clamp_Load': 96565,
+          'Grade_9_Clamp_Load': 0,
+          'Socket_Clamp_Load': 108636,
+        },
+        '1 3/8-12': {
+          'diameter': 1.375,
+          'pitch': 12,
+          'Grade_A_Clamp_Load': 35497,
+          'Grade_5_Clamp_Load': 72967,
+          'Grade_8_Clamp_Load': 118324,
+          'Grade_9_Clamp_Load': 0,
+          'Socket_Clamp_Load': 133115,
+        },
+        '1 1/2-12': {
+          'diameter': 1.5,
+          'pitch': 12,
+          'Grade_A_Clamp_Load': 42688,
+          'Grade_5_Clamp_Load': 87747,
+          'Grade_8_Clamp_Load': 142292,
+          'Grade_9_Clamp_Load': 0,
+          'Socket_Clamp_Load': 160079,
         },
     },
 

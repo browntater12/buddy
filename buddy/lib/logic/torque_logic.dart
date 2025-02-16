@@ -106,3 +106,27 @@ class Torque extends Notifier<double>{
     state=value;
   }
 }
+
+final UnitsProvider = NotifierProvider<Units, bool>(Units.new);
+
+class Units extends Notifier<bool>{
+  @override
+  bool build(){
+    return true;
+  }
+  void setUnits(bool value){
+    state=value;
+  }
+}
+
+final threadSizeProvider = NotifierProvider<ThreadSizes, bool>(ThreadSizes.new);
+
+class ThreadSizes extends Notifier<bool>{
+  @override
+  bool build(){
+    return true;
+  }
+  void setThreadSize(bool value){
+    state=value;
+  }
+}
