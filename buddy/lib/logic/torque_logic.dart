@@ -24,6 +24,7 @@ class Strength extends Notifier<Map<String, bool>>{
       '1': false,
       '2': false,
       '3': false,
+      '4': false,
       };
     }
   void setStrength(String selected) {
