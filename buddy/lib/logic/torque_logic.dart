@@ -130,3 +130,15 @@ class ThreadSizes extends Notifier<bool>{
     state=value;
   }
 }
+
+final isCourseProvider = NotifierProvider<IsCourse, bool>(IsCourse.new);
+
+class IsCourse extends Notifier<bool>{
+  @override
+  bool build(){
+    return true;
+  }
+  void setIsCourse(bool value){
+    state=value;
+  }
+}

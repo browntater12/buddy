@@ -43,21 +43,23 @@ class CupertinoPickerExample extends ConsumerWidget {
     return Row(
           children: [
             Expanded(
-              child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text('Fine', style: TextStyle(color: Colors.white),),
+              child: GestureDetector(
+                onDoubleTap: () => ref.watch(isCourseProvider) ? ref.read(isCourseProvider.notifier).setIsCourse(false) : null,
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('Fine', style: TextStyle(color: ref.watch(isCourseProvider) ? Color(0xFF838285) : Colors.white),),
                 Container(
-                  padding: EdgeInsets.only(left:63, right: 63),
+                  width: 150,
                   height: 75,
                   decoration: BoxDecoration(
-                    color: Color(0xFFE7F0FF), // Background color
+                    color: ref.watch(isCourseProvider) ? Color(0xFF212023) : Color(0xFFF4FFDC), // Background color
                     borderRadius: BorderRadius.circular(12), // Rounded corners
                   ),
                   child: CupertinoButton(
                     padding: EdgeInsets.zero,
                     // Display a CupertinoPicker with list of fruits.
-                    onPressed: () => _showDialog(
+                    onPressed: () => ref.watch(isCourseProvider)? null : _showDialog(
                       context,
                       CupertinoPicker(
                         magnification: 1.22,
@@ -90,25 +92,28 @@ class CupertinoPickerExample extends ConsumerWidget {
                   ),
                 ),
               ],
-                        ),
             ),
+          ),
+          ),
 
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text('Course', style: TextStyle(color: Colors.white),),
+            child: GestureDetector(
+              onDoubleTap: () => ref.watch(isCourseProvider) ? null : ref.read(isCourseProvider.notifier).setIsCourse(true),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                Text('Course', style: TextStyle(color: ref.watch(isCourseProvider) ? Colors.white : Color(0xFF838285)),),
                 Container(
-                  padding: EdgeInsets.only(left:63, right: 63),
+                  width: 150,
                   height: 75,
                   decoration: BoxDecoration(
-                    color: Color(0xFFF4FFDC), // Background color
+                    color: ref.watch(isCourseProvider) ? Color(0xFFF4FFDC) : Color(0xFF212023), // Background color
                     borderRadius: BorderRadius.circular(12), // Rounded corners
                   ),
                   child: CupertinoButton(
                     padding: EdgeInsets.zero,
                     // Display a CupertinoPicker with list of fruits.
-                    onPressed: () => _showDialog(
+                    onPressed: () => !ref.watch(isCourseProvider)? null :_showDialog(
                       context,
                       CupertinoPicker(
                         magnification: 1.22,
@@ -143,7 +148,8 @@ class CupertinoPickerExample extends ConsumerWidget {
               ],
             ),
           ),
-          ], 
+          ),
+          ],
       );
   }
 }

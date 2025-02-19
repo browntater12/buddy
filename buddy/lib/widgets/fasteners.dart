@@ -132,7 +132,7 @@ Map fasteners = {
     }
   },
   'inch': {
-    'strengths' : ["Grade A", "Grade 5", "Grade 8", "Socket"],
+    'strengths' : ["Grade A", "Grade 5", "Grade 8", "Grade 9", "Socket"],
     'fine':{
         '1/4-28': {
           'diameter': 0.25,

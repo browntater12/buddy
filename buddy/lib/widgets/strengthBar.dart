@@ -18,7 +18,7 @@ class Strengthbar extends StatelessWidget {
               child: 
                   ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 4,
+                      itemCount: strengths.length,
                       itemBuilder: (context, index){
                         return StrengthButton(title: strengths[index], index: index);
                       }
