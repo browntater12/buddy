@@ -43,7 +43,7 @@ class TermsConditionsScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 final prefs = await SharedPreferences.getInstance();
-                await prefs.setBool('termsAccepted', true);
+                await prefs.setBool('isTermsAccepted', true);
                 Navigator.push(
                           context,
                           MaterialPageRoute(

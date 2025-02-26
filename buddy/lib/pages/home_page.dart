@@ -25,6 +25,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
           backgroundColor: Colors.black,
+          automaticallyImplyLeading: false,
           actions: [
             IconButton(
                 onPressed: () {

@@ -55,7 +55,7 @@ class MyApp extends ConsumerWidget {
       //   useMaterial3: true,
       //   primaryColor: Colors.white,
       // ),
-      home: ref.watch(termsProvider).state ? MyHomePage(title: 'The Brown Lab') : const TermsConditionsScreen(),
+      home: ref.watch(termsProvider) ? MyHomePage(title: 'The Brown Lab') : const TermsConditionsScreen(),
     );
   }
 }
