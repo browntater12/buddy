@@ -143,3 +143,15 @@ class IsCourse extends Notifier<bool>{
     state=value;
   }
 }
+
+final termsProvider = NotifierProvider<Terms, bool>(Terms.new);
+
+class Terms extends Notifier<bool>{
+  @override
+  bool build(){
+    return false;
+  }
+  void setIsTermsAccepted(bool value){
+    state=value;
+  }
+}

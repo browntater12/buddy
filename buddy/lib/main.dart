@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'pages/home_page.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:buddy/logic/torque_logic.dart';
+import 'package:buddy/pages/terms_and_conditions.dart';
+
+final sharedPrefsProvider = Provider<SharedPreferences>((ref) {
+  throw UnimplementedError();
+});
+
+final initializeSettingsProvider = FutureProvider<void>((ref) async {
+  final prefs = await SharedPreferences.getInstance();
+  ref.read(termsProvider.notifier).state = prefs.getBool('isTermsAccepted') ?? false;
+});
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,11 +26,11 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -43,7 +55,7 @@ class MyApp extends StatelessWidget {
       //   useMaterial3: true,
       //   primaryColor: Colors.white,
       // ),
-      home: MyHomePage(title: 'The Brown Lab'),
+      home: ref.watch(termsProvider).state ? MyHomePage(title: 'The Brown Lab') : const TermsConditionsScreen(),
     );
   }
 }
