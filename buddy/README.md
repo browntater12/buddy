@@ -1,3 +1,3 @@
-# buddy
+# Torque buddy
 
-A new Flutter project.
+An app to calculate torque and replace the torque sliders. 
