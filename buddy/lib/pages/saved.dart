@@ -11,7 +11,6 @@ class _SavedScreenState extends State<SavedScreen> {
 
   void _loadItems() async {
     final items = await DatabaseHelper.getItems();
-    print(items);
     setState(() {
       _items = items;
     });

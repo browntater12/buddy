@@ -8,7 +8,6 @@ import 'package:buddy/logic/torque_logic.dart';
 class SaveData extends ConsumerWidget {
   void _addItem(String name, double torque) async {
     await DatabaseHelper.insertItem(name, torque);
-    print('${name} ${torque}');
   }
   
   @override

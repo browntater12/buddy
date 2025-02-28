@@ -7,19 +7,14 @@ class TorqueOutput extends ConsumerWidget {
   const TorqueOutput({super.key});
 
   double calculate(kfactor, size, strength, threadType) {
-    return (kfactor * fasteners['inch'][threadType][size]['diameter'] * 859) /
-        12;
+    return (kfactor * fasteners['inch'][threadType][size]['diameter'] * 859) / 12;
   }
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  dynamic torqueCalculation(ref){
     String threadType =
         ref.watch(Providers().threadSizeProvider) ? 'coarse' : 'fine';
     String sizeName = ref.watch(Providers().threadSizeProvider)
         ? ref.watch(Providers().sizeNameProvider)
         : ref.watch(Providers().fineNameProvider);
-    // calculate(ref.watch(kFactorProvider), ref.watch(sizeProvider), ref.watch(strengthProvider));
-    // return  Text(ref.watch(torqueProvider).toString());
     var size = fasteners['inch'][threadType][sizeName]['diameter'] ?? 0;
     var kfactor = ref.watch(Providers().kFactorProvider);
     String strengthKey =
@@ -41,6 +36,12 @@ class TorqueOutput extends ConsumerWidget {
         torque = torque.round();
       }
     }
+//TODO: fix torque being added into database    // ref.read(Providers().torqueProvider.notifier).state = torque;
+    return torque;
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
     return Expanded(
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,9 +57,8 @@ class TorqueOutput extends ConsumerWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            // Text('Clampload:\n $strength lbs', style: TextStyle(fontSize: 40, color: Colors.white),),
             Text(
-              '$torque',
+              '${torqueCalculation(ref).toString()}',
               style: TextStyle(fontSize: 90, color: Colors.white),
             ),
             Text(
