@@ -12,7 +12,7 @@ final sharedPrefsProvider = Provider<SharedPreferences>((ref) {
 
 final initializeSettingsProvider = FutureProvider<void>((ref) async {
   final prefs = await SharedPreferences.getInstance();
-  ref.read(termsProvider.notifier).state = prefs.getBool('isTermsAccepted') ?? false;
+  ref.read(Providers().termsProvider.notifier).state = prefs.getBool('isTermsAccepted') ?? false;
 });
 
 void main() {
@@ -32,7 +32,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Torque Buddy',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xFF219EBC), // Main Light Blue
@@ -55,7 +55,7 @@ class MyApp extends ConsumerWidget {
       //   useMaterial3: true,
       //   primaryColor: Colors.white,
       // ),
-      home: ref.watch(termsProvider) ? MyHomePage(title: 'The Brown Lab') : const TermsConditionsScreen(),
+      home: ref.watch(Providers().termsProvider) ? MyHomePage(title: 'The Brown Lab') : const TermsConditionsScreen(),
     );
   }
 }

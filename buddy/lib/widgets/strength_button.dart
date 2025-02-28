@@ -9,12 +9,8 @@ class StrengthButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isSelected = ref.watch(strengthProvider)['$index'] ?? false;
+    final isSelected = ref.watch(Providers().strengthProvider)['$index'] ?? false;
     String imageName = title.replaceAll(' ', '_');
-    
-    print('Title: $title');
-    print('Image Name: $imageName');
-    print('Image Path: ${isSelected ? 'assets/Black/$imageName.png' : 'assets/White/$imageName.png'}');
 
     Color selectedColor = isSelected ? Color(0xffe5f1ff) : Colors.black;
 
@@ -34,8 +30,7 @@ class StrengthButton extends ConsumerWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: isSelected ? AssetImage('assets/Black/$imageName.png') : AssetImage('assets/White/$imageName.png'), // Local image
-                      // image: AssetImage('assets/White/$imageName.png'),
+                      image: isSelected ? AssetImage('assets/Black/$imageName.png') : AssetImage('assets/White/$imageName.png'),
                       fit: BoxFit.cover, // Adjusts the image to cover the entire container
                     ),
                   ),
@@ -49,8 +44,8 @@ class StrengthButton extends ConsumerWidget {
         ),
       ),
       onTap: () {
-        ref.read(strengthProvider.notifier).setStrength('$index');
-        ref.read(strengthNameProvider.notifier).setName(title);
+        ref.read(Providers().strengthProvider.notifier).setStrength('$index');
+        ref.read(Providers().strengthNameProvider.notifier).setName(title);
       },
     );
   }

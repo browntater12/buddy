@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:buddy/widgets/Switches.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,8 +12,8 @@ final sharedPrefsProvider = Provider<SharedPreferences>((ref) {
 
 final initializeSettingsProvider = FutureProvider<void>((ref) async {
   final prefs = await SharedPreferences.getInstance();
-  ref.read(UnitsProvider.notifier).state = prefs.getBool('isMetric') ?? false;
-  ref.read(threadSizeProvider.notifier).state = prefs.getBool('isCoarse') ?? false;
+  ref.read(Providers().UnitsProvider.notifier).state = prefs.getBool('isMetric') ?? false;
+  ref.read(Providers().threadSizeProvider.notifier).state = prefs.getBool('isCoarse') ?? false;
 });
 
 
@@ -22,30 +24,28 @@ class SettingsPage extends ConsumerWidget {
     ref.watch(initializeSettingsProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
-      body: ListView(
+      body: Column(
         children:  [
-          ListTile(
-            title: Text('Measurement Units: ${ref.watch(UnitsProvider) ? 'INCH' : 'METRIC'}'),
-            trailing: Unit(
-              onChanged: (value) async {
-                final prefs = await SharedPreferences.getInstance();
-                await prefs.setBool('isMetric', value);
-              },
+           SettingsSwitch(
+              userHelperText: 'Measurement Units',
+              settingTitle: 'Measurement Units',
+              settingOptions: ('INCH', 'METRIC'),
+              provider: Providers().UnitsProvider,
             ),
-          ),
-          ListTile(
-           title: Text('Default Thread Size: ${ref.watch(threadSizeProvider) ? 'COURSE' : 'FINE'}'),
-            trailing: ThreadSize(
-              onChanged: (value) async {
-                final prefs = await SharedPreferences.getInstance();
-                await prefs.setBool('isCoarse', value);
-                ref.read(isCourseProvider.notifier).setIsCourse(value);
-              },
+          SettingsSwitch(
+              userHelperText: 'Thread Type',
+              settingTitle: 'Thread Type',
+              settingOptions: ('COURSE', 'FINE'),
+              provider: Providers().threadSizeProvider,
             ),
-          ),
-          
+          SettingsSwitch(
+              userHelperText: 'Work Units',
+              settingTitle: 'Work Units',
+              settingOptions: ('Foot-Pounds', 'Newton-Meters'),
+              provider: Providers().workProvider,
+            ),
         ],
       ),
     );

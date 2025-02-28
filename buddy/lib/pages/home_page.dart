@@ -1,13 +1,15 @@
+import 'package:buddy/pages/saved.dart';
 import 'package:buddy/widgets/Slider.dart';
 import 'package:buddy/widgets/strengthBar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/torqueCalc.dart'; // Add this import statement
 import '../widgets/iOSPicker.dart';
-import 'package:buddy/widgets/fasteners.dart';
+import 'package:buddy/data/fasteners.dart';
 import '../colors/colors.dart' as colors;
 import 'package:buddy/pages/settings.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:buddy/pages/terms_and_conditions.dart';
+import 'package:buddy/data/local_db_helper.dart';
+import 'package:buddy/widgets/SaveData.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key, required this.title});
@@ -19,6 +21,7 @@ class MyHomePage extends StatelessWidget {
     Image.asset("assets/Bolt_Basic.png"),
     Image.asset("assets/Bolt_Basic.png")
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,19 +74,14 @@ class MyHomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      print("save");
-                    },
-                    icon: Icon(
-                      Icons.bookmark_add_outlined,
-                      size: 30,
-                    ),
-                    color: colors.iconColor,
-                  ),
+                  SaveData(),
                   IconButton(
                       onPressed: () {
-                        print("list");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SavedScreen()),
+                        );
                       },
                       icon: Icon(
                         Icons.list_alt_outlined,
@@ -95,7 +93,7 @@ class MyHomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TermsConditionsScreen()),
+                              builder: (context) => SavedScreen()),
                         );
                       },
                       icon: const Icon(

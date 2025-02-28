@@ -1,4 +1,4 @@
-import 'package:buddy/widgets/fasteners.dart';
+import 'package:buddy/data/fasteners.dart';
 import 'package:buddy/widgets/strength_button.dart';
 import 'package:flutter/material.dart';
 

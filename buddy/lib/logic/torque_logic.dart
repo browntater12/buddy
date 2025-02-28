@@ -1,8 +1,81 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final kFactorProvider = NotifierProvider<KFactor, double>(KFactor.new);
+class Providers {
+  Providers._(); // Private constructor
+  
+  static final Providers _instance = Providers._();
+  
+  factory Providers() {
+    return _instance;
+  }
 
+  final kFactorProvider = NotifierProvider<KFactor, double>(KFactor.new);
+  final strengthProvider = NotifierProvider<Strength, Map<String, bool>>(Strength.new);
+  final sizeProvider = NotifierProvider<Size, int>(Size.new);
+  final fineProvider = NotifierProvider<Fine, int>(Fine.new);
+  final torqueProvider = NotifierProvider<Torque, double>(Torque.new);
+  final UnitsProvider = NotifierProvider<Units, bool>(Units.new);
+  final threadSizeProvider = NotifierProvider<ThreadSizes, bool>(ThreadSizes.new);
+  final isCourseProvider = NotifierProvider<IsCourse, bool>(IsCourse.new);
+  final termsProvider = NotifierProvider<Terms, bool>(Terms.new);
+  final workProvider = NotifierProvider<Work, bool>(Work.new);
+  final strengthNameProvider = NotifierProvider<StrengthName, String>(StrengthName.new);
+  final sizeNameProvider = NotifierProvider<SizeName, String>(SizeName.new);
+  final fineNameProvider = NotifierProvider<FineName, String>(FineName.new);
+  final boltDetailsAddedProvider = NotifierProvider<BoltDetailsAdded, bool>(BoltDetailsAdded.new);
+
+  NotifierProvider<Notifier<dynamic>, dynamic> getProvider(String providerName) {
+    switch (providerName) {
+      case 'UnitsProvider':
+        return UnitsProvider;
+      case 'threadSizeProvider':
+        return threadSizeProvider;
+      case 'isCourseProvider':
+        return isCourseProvider;
+      case 'termsProvider':
+        return termsProvider;
+      case 'workProvider':    
+        return workProvider;
+      case 'kFactorProvider':
+        return kFactorProvider;
+      case 'strengthProvider':
+        return strengthProvider;
+      case 'strengthNameProvider':
+        return strengthNameProvider;
+      case 'sizeProvider':
+        return sizeProvider;
+      case 'sizeNameProvider':
+        return sizeNameProvider;
+      case 'fineProvider':
+        return fineProvider;
+      case 'fineNameProvider':
+        return fineNameProvider;
+      case 'torqueProvider':
+        return torqueProvider;
+      case 'boltDetailsAddedProvider':
+        return boltDetailsAddedProvider;
+      default:
+        throw ArgumentError('Unknown provider name: $providerName');
+    }
+  }
+}
+class Torque extends Notifier<double>{
+  @override
+  double build(){
+    return 0.0;
+  }
+  void setTorque(double value){
+    state=value;
+  }
+}
+
+class BoltDetailsAdded extends Notifier<bool>{
+  @override
+  bool build(){
+    return false;
+  }
+}
 class KFactor extends Notifier<double>{
   @override
   double build(){
@@ -12,9 +85,6 @@ class KFactor extends Notifier<double>{
     state=value;
   }
 }
-
-
-final strengthProvider = NotifierProvider<Strength, Map<String, bool>>(Strength.new);
 
 class Strength extends Notifier<Map<String, bool>>{
   @override
@@ -32,7 +102,6 @@ class Strength extends Notifier<Map<String, bool>>{
 	  }
 }
 
-final strengthNameProvider = NotifierProvider<StrengthName, String>(StrengthName.new);
 
 class StrengthName extends Notifier<String>{
   @override
@@ -44,8 +113,6 @@ class StrengthName extends Notifier<String>{
 	  }
 }
 
-final sizeNameProvider = NotifierProvider<SizeName, String>(SizeName.new);
-
 class SizeName extends Notifier<String>{
   @override
   String build(){
@@ -55,10 +122,6 @@ class SizeName extends Notifier<String>{
 	    state = selected;
 	  }
 }
-
-
-
-final sizeProvider = NotifierProvider<Size, int>(Size.new);
 
 class Size extends Notifier<int>{
   @override
@@ -70,8 +133,6 @@ class Size extends Notifier<int>{
   }
 }
 
-final fineNameProvider = NotifierProvider<FineName, String>(FineName.new);
-
 class FineName extends Notifier<String>{
   @override
   String build(){
@@ -81,10 +142,6 @@ class FineName extends Notifier<String>{
 	    state = selected;
 	  }
 }
-
-
-
-final fineProvider = NotifierProvider<Fine, int>(Fine.new);
 
 class Fine extends Notifier<int>{
   @override
@@ -96,20 +153,6 @@ class Fine extends Notifier<int>{
   }
 }
 
-
-final torqueProvider = NotifierProvider<Torque, double>(Torque.new);
-class Torque extends Notifier<double>{
-  @override
-  double build(){
-    return 0.0;
-    }
-  void setTorque(double  value){
-    state=value;
-  }
-}
-
-final UnitsProvider = NotifierProvider<Units, bool>(Units.new);
-
 class Units extends Notifier<bool>{
   @override
   bool build(){
@@ -120,7 +163,6 @@ class Units extends Notifier<bool>{
   }
 }
 
-final threadSizeProvider = NotifierProvider<ThreadSizes, bool>(ThreadSizes.new);
 
 class ThreadSizes extends Notifier<bool>{
   @override
@@ -132,7 +174,6 @@ class ThreadSizes extends Notifier<bool>{
   }
 }
 
-final isCourseProvider = NotifierProvider<IsCourse, bool>(IsCourse.new);
 
 class IsCourse extends Notifier<bool>{
   @override
@@ -144,14 +185,22 @@ class IsCourse extends Notifier<bool>{
   }
 }
 
-final termsProvider = NotifierProvider<Terms, bool>(Terms.new);
-
 class Terms extends Notifier<bool>{
   @override
   bool build(){
     return false;
   }
   void setIsTermsAccepted(bool value){
+    state=value;
+  }
+}
+
+class Work extends Notifier<bool>{
+  @override
+  bool build(){
+    return true;
+  }
+  void setIsFootPounds(bool value){
     state=value;
   }
 }
