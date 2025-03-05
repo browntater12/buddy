@@ -76,7 +76,7 @@ class MyHomePage extends StatelessWidget {
                         );
                       },
                       icon: Icon(
-                        Icons.account_balance_outlined,
+                        Icons.menu_outlined,
                         size: 30,
                       ),
                       color: colors.iconColor),

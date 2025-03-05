@@ -48,7 +48,7 @@ class _TorqueOutputState extends ConsumerState<TorqueOutput> {
   void _updateTorque() {
     setState(() {
       _torqueValue = torqueCalculation(ref);
-      // _torqueValue = ref.read(Providers().torqueProvider.notifier).state.toString();
+      ref.read(Providers().torqueProvider.notifier).state.toString();
     });
   }
 

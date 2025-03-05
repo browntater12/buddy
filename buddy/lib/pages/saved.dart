@@ -37,6 +37,7 @@ class _SavedScreenState extends State<SavedScreen> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(_items[index]['name']),
+            trailing: Text('${_items[index]['torque'].toString()}ft-lbs', style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),), 
           );
         },
       ),

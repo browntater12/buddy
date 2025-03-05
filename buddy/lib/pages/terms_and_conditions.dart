@@ -26,8 +26,8 @@ class TermsConditionsScreen extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Text(
-                  'Last Updated: 02/26/2025\n\n'
-                  'Welcome to Torque Calculator (the "App"). By downloading, accessing, or using the App, you agree to be bound by these Terms and Conditions (the "Terms"). If you do not agree to these Terms, please do not use the App.\n\n'
+                  'Last Updated: 03/05/2025\n\n'
+                  'Welcome to Torque Buddy (the "App"). By downloading, accessing, or using the App, you agree to be bound by these Terms and Conditions (the "Terms"). If you do not agree to these Terms, please do not use the App.\n\n'
                   '1. General Disclaimer\n The App provides torque calculations and related information for reference purposes only. While we strive to ensure accuracy, we do not guarantee that the data provided is error-free, complete, or suitable for any specific purpose. The use of this App is entirely at your own risk.\n\n'
                   '2. No Professional Advice\n The calculations and results provided by the App are for informational purposes only and should not be considered as professional or engineering advice. You are responsible for verifying all results independently before relying on them for any critical applications.\n\n'
                   '3. Limitation of Liability\n To the maximum extent permitted by law, MaizeTech and its affiliates, developers, or licensors shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the App, including but not limited to loss of data, equipment failure, or personal injury.\n\n'
