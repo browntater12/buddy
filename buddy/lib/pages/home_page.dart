@@ -2,7 +2,7 @@ import 'package:buddy/pages/saved.dart';
 import 'package:buddy/widgets/Slider.dart';
 import 'package:buddy/widgets/strengthBar.dart';
 import 'package:flutter/material.dart';
-import '../widgets/torqueCalc.dart'; // Add this import statement
+import '../widgets/torqueOutput.dart'; // Add this import statement
 import '../widgets/iOSPicker.dart';
 import 'package:buddy/data/fasteners.dart';
 import '../colors/colors.dart' as colors;
@@ -48,21 +48,13 @@ class MyHomePage extends StatelessWidget {
           )),
       body: Column(children: [
         TorqueOutput(),
-        //Gap Between AppBar and Strengths
-        //Strength buttons in row
-
-        // Gap Between Strengths and Sizes
-
-        // CupertinoPicker Widget - Size
         Padding(
           padding: const EdgeInsets.only(top: 30.0),
           child: CupertinoPickerExample(),
         ),
-        //Gap Between Picker and Slider
         SizedBox(
           height: 40,
         ),
-        // Slider for k-factor
         SliderExample(),
         Strengthbar(),
       ]),
@@ -84,23 +76,24 @@ class MyHomePage extends StatelessWidget {
                         );
                       },
                       icon: Icon(
-                        Icons.list_alt_outlined,
+                        Icons.account_balance_outlined,
                         size: 30,
                       ),
                       color: colors.iconColor),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SavedScreen()),
-                        );
-                      },
-                      icon: const Icon(
-                        Icons.shopping_cart_outlined,
-                        size: 30,
-                      ),
-                      color: colors.iconColor),
+                  //Buy this bolt 
+                  // IconButton(
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) => SavedScreen()),
+                  //       );
+                  //     },
+                  //     icon: const Icon(
+                  //       Icons.shopping_cart_outlined,
+                  //       size: 30,
+                  //     ),
+                  //     color: colors.iconColor),
                 ],
               ),
             )),

@@ -6,8 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:buddy/logic/torque_logic.dart';
 
 class SaveData extends ConsumerWidget {
-  void _addItem(String name, double torque) async {
-    await DatabaseHelper.insertItem(name, torque);
+  void _addItem(String name, dynamic torque) async {
+    double torqueValue = torque is int ? torque.toDouble() : torque;
+    await DatabaseHelper.insertItem(name, torqueValue);
   }
   
   @override
